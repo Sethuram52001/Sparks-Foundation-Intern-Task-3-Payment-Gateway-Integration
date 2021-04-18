@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import DonationPage from './components/DonationPage';
+import LandingPage from './components/LandingPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {  }
+  render() { 
+    return (
+      <div>
+        <Router>
+          <Switch>
+            <Route path="/" component={LandingPage} exact />
+            <Route path="/donate" component={DonationPage} exact />
+          </Switch>
+        </Router>
+      </div>
+     );
+  }
 }
-
+ 
 export default App;
